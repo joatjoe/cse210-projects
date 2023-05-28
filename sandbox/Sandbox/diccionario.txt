@@ -1,0 +1,3 @@
+clave1=10
+clave2=20
+clave3=30
