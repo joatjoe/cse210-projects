@@ -25,17 +25,17 @@ public class Reference
 
     public Reference(string reference)
     {
-        string[] parts = reference.Split(" ");
-        _book = parts[0];
-        _chapter = parts[1].Split(":")[0];
-        string[] verseParts = parts[1].Split(":")[1].Split("-");
-        _startVerse = verseParts[0];
+        string[] parts01 = reference.Split(" ");
+        _book = parts01[0];
+        string[] parts02 = parts01[1].Split(":");
+        _chapter = parts02[0];
+        string[] parts03 = parts02[1].Split("-");
+        _startVerse = parts03[0];
         
-        if (verseParts.Length == 2)
+        if (parts03.Length == 2)
         {
-            _endVerse = verseParts[1];
-            _verses = GetVersesNumber(_startVerse, _endVerse);
-
+            _endVerse = parts03[1];
+            _verses = GetVerse(_startVerse, _endVerse);
         }
         else
         {
@@ -44,7 +44,7 @@ public class Reference
         }
     }
 
-    private string GetVersesNumber(string startVerse, string endVerse)
+    private string GetVerse(string startVerse, string endVerse)
     {
         _startVerse = startVerse;
         _endVerse = endVerse;
