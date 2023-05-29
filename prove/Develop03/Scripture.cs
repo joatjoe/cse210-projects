@@ -2,8 +2,8 @@ using System;
 
 public class Scripture
 {
-    public List<Word> _words = new List<Word>();
-    public Reference _reference;
+    private List<Word> _words = new List<Word>();
+    private Reference _reference;
     
     public Scripture(string reference, string text)
     {
